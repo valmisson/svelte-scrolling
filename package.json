@@ -1,0 +1,23 @@
+{
+  "name": "svelte-smartscroll",
+  "version": "0.1.0",
+  "description": "A smart scrolling Svelte plugin",
+  "author": "Valmisson Grizorte",
+  "license": "MIT",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/valmisson/svelte-smartscroll.git"
+  },
+  "bugs": {
+    "url": "https://github.com/valmisson/svelte-smartscroll/issues"
+  },
+  "homepage": "https://github.com/valmisson/svelte-smartscroll#README",
+  "keywords": [
+    "svelte",
+    "smartscroll"
+  ],
+  "files": [
+    "src"
+  ]
+}
