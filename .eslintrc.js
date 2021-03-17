@@ -24,5 +24,6 @@ module.exports = {
     }
   ],
   rules: {
+    'no-multiple-empty-lines': ['error', { max: 1, maxBOF: 2, maxEOF: 0 }]
   }
 }
