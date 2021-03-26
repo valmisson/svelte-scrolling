@@ -4,6 +4,9 @@
   "description": "A smart scrolling Svelte plugin",
   "author": "Valmisson Grizorte",
   "license": "MIT",
+  "svelte": "src/index.js",
+  "main": "dist/svelte-smartscroll.umd.js",
+  "module": "dist/svelte-smartscroll.es.js",
   "scripts": {
     "build": "vite build",
     "lint": "eslint **/*.{js,svelte}"
@@ -44,5 +47,11 @@
   "files": [
     "src",
     "dist"
-  ]
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/svelte-smartscroll.es.js",
+      "require": "./dist/svelte-smartscroll.umd.js"
+    }
+  }
 }
