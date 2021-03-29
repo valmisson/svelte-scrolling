@@ -1,6 +1,6 @@
 export const sanitize = hash => {
   return hash
-    .replace(/^#/, '')
+    .replace(/[^A-Z0-9]/gi, '')
     .toLowerCase()
 }
 
