@@ -9,7 +9,8 @@
   "module": "dist/svelte-smartscroll.es.js",
   "scripts": {
     "build": "vite build",
-    "lint": "eslint **/*.{js,svelte}"
+    "lint": "eslint **/*.{js,svelte}",
+    "prepublishOnly": "npm run build"
   },
   "devDependencies": {
     "@svitejs/vite-plugin-svelte": "^0.11.1",
