@@ -4,7 +4,10 @@ import { elements } from '../stores'
 
 const elementsList = get(elements)
 
-const scrollRef = (node, hash) => {
+const scrollRef = (
+  node: HTMLElement,
+  hash: string
+): void => {
   if (!hash) {
     throw new Error('scrollRef require a hash')
   }

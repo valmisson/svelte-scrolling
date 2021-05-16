@@ -10,7 +10,7 @@ import {
 const elementsList = get(elements)
 
 // handle with scrolling
-const handle = (event, hash) => {
+const handle = (event: Event, hash: string): void => {
   event.preventDefault()
 
   const element = getElement(elementsList, hash)
@@ -24,7 +24,7 @@ const handle = (event, hash) => {
   scroll(position)
 }
 
-const scrollTo = (node, h) => {
+const scrollTo = (node: HTMLLinkElement, h: string): void => {
   if (!h) {
     throw new Error('scrollTo require a hash')
   }
@@ -34,7 +34,7 @@ const scrollTo = (node, h) => {
   node.href = hash
 
   if (node.tagName !== 'A') {
-    node.style = 'cursor: pointer;'
+    node.style.cursor = 'pointer'
   }
 
   node.addEventListener('click', event => handle(event, hash))

@@ -1,10 +1,13 @@
-export const sanitize = hash => {
+export const sanitize = (hash: string): string => {
   return hash
     .replace(/[^A-Z0-9]/gi, '')
     .toLowerCase()
 }
 
-export const getElement = (elementsList, hash) => {
+export const getElement = (
+  elementsList: Array<ElementRef>,
+  hash: string
+): HTMLElement | null => {
   const elements = elementsList.filter(element => {
     const elementHash = element.hash
 
@@ -14,13 +17,15 @@ export const getElement = (elementsList, hash) => {
   return elements.length ? elements[0].node : null
 }
 
-export const getPosition = element => {
+export const getPosition = (
+  element: HTMLElement
+): number => {
   const recPosition = element.getBoundingClientRect()
 
-  return parseInt(recPosition.top, 10)
+  return recPosition.top
 }
 
-export const scroll = position => {
+export const scroll = (position: number): void => {
   window.scrollBy({
     top: position,
     left: 0,
