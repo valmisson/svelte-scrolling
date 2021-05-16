@@ -1,12 +1,19 @@
-import path from 'path'
+import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import svelte from '@svitejs/vite-plugin-svelte'
 
 export default defineConfig({
   build: {
     lib: {
-      entry: path.resolve(__dirname, 'src/index.ts'),
+      entry: resolve(__dirname, 'src/index.ts'),
       name: 'SmartScroll'
+    }
+  },
+  resolve: {
+    alias: {
+      '~': resolve(__dirname, './'),
+      '@src': resolve(__dirname, 'src'),
+      '@actions': resolve(__dirname, 'src/actions')
     }
   },
   plugins: [

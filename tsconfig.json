@@ -12,7 +12,12 @@
     "experimentalDecorators": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
-    "removeComments": false
+    "removeComments": false,
+    "paths": {
+      "~/*": ["./*"],
+      "@src/*": ["src/*"],
+      "@actions/*": ["src/actions/*"]
+    }
   },
   "include": [
     "src/**/*.ts",

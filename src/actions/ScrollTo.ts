@@ -1,11 +1,11 @@
 import { get } from 'svelte/store'
-import { elements } from '../stores'
+import { elements } from '@src/stores'
 import {
   scroll,
   sanitize,
   getElement,
   getPosition
-} from '../helpers'
+} from '@src/helpers'
 
 const elementsList = get(elements)
 
