@@ -1,3 +1,8 @@
+interface SmoothOptions {
+  start: number
+  end: number
+}
+
 interface ElementRef {
   node: HTMLElement,
   hash: string

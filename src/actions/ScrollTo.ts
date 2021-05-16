@@ -1,11 +1,11 @@
 import { get } from 'svelte/store'
 import { elements } from '@src/stores'
 import {
-  scroll,
   sanitize,
   getElement,
   getPosition
 } from '@src/helpers'
+import smoothScroll from '@src/smoothScroll'
 
 const elementsList = get(elements)
 
@@ -19,9 +19,12 @@ const handle = (event: Event, hash: string): void => {
     throw new Error('Element not found')
   }
 
-  const position = getPosition(element)
+  const start = window.pageYOffset
+  const end = getPosition(element)
 
-  scroll(position)
+  smoothScroll({ start, end }, (position: number) => {
+    window.scroll(0, position)
+  })
 }
 
 const scrollTo = (node: HTMLLinkElement, h: string): void => {

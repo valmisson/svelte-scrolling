@@ -20,15 +20,5 @@ export const getElement = (
 export const getPosition = (
   element: HTMLElement
 ): number => {
-  const recPosition = element.getBoundingClientRect()
-
-  return recPosition.top
-}
-
-export const scroll = (position: number): void => {
-  window.scrollBy({
-    top: position,
-    left: 0,
-    behavior: 'smooth'
-  })
+  return element.offsetTop
 }
