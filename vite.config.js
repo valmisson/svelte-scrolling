@@ -13,7 +13,8 @@ export default defineConfig({
     alias: {
       '~': resolve(__dirname, './'),
       '@src': resolve(__dirname, 'src'),
-      '@actions': resolve(__dirname, 'src/actions')
+      '@actions': resolve(__dirname, 'src/actions'),
+      '@helpers': resolve(__dirname, 'src/helpers/index.ts')
     }
   },
   plugins: [

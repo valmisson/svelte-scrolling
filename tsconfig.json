@@ -16,7 +16,8 @@
     "paths": {
       "~/*": ["./*"],
       "@src/*": ["src/*"],
-      "@actions/*": ["src/actions/*"]
+      "@actions/*": ["src/actions/*"],
+      "@helpers": ["src/helpers/index.ts"]
     }
   },
   "include": [

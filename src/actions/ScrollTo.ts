@@ -3,9 +3,9 @@ import { elements } from '@src/stores'
 import {
   sanitize,
   getElement,
-  getPosition
-} from '@src/helpers'
-import smoothScroll from '@src/smoothScroll'
+  getPosition,
+  smoothScroll
+} from '@helpers'
 
 const elementsList = get(elements)
 
