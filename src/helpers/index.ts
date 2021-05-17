@@ -1,4 +1,4 @@
-export { default as smoothScroll} from "./smoothScroll"
+export { default as smoothScroll } from './smoothScroll'
 
 export const sanitize = (hash: string): string => {
   return hash
