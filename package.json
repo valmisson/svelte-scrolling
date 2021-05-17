@@ -32,7 +32,7 @@
     "pre-commit": "lint-staged"
   },
   "lint-staged": {
-    "**/*.{js,svelte}": [
+    "src/**/*.{js,ts,svelte}": [
       "eslint --fix"
     ]
   },
