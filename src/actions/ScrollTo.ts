@@ -31,7 +31,7 @@ const handle = (event: Event, options: ScrollToOpts): void => {
 const scrollTo = (
   node: HTMLLinkElement,
   opts: ScrollToOpts | string
-): void => {
+) => {
   if (!opts) {
     throw new Error('scrollTo require a options')
   }
@@ -62,6 +62,13 @@ const scrollTo = (
 
   node.addEventListener('click', event => handle(event, options))
   node.addEventListener('touchstart', event => handle(event, options))
+
+  return {
+    destroy () {
+      node.removeEventListener('click', event => handle(event, options))
+      node.removeEventListener('touchstart', event => handle(event, options))
+    }
+  }
 }
 
 export default scrollTo
