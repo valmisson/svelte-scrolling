@@ -1,10 +1,19 @@
+interface ScrollToOpts {
+  ref: string
+  offset: number
+  duration: number
+  delay: number
+}
+
 interface SmoothOptions {
   start: number
   end: number
+  duration: number
+  delay: number
 }
 
 interface ElementRef {
-  node: HTMLElement,
+  node: HTMLElement
   hash: string
 }
 
