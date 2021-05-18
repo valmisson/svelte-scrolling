@@ -1,9 +1,9 @@
 # svelte-smartscroll
 
-[![npm](https://img.shields.io/npm/v/svelte-smartscroll.svg)](https://www.npmjs.com/package/svelte-smartscroll)
-[![license](https://img.shields.io/github/license/valmisson/svelte-smartscroll.svg)](https://github.com/valmisson/svelte-smartscroll/blob/main/LICENSE)
+[![npm][npm-shields]](https://www.npmjs.com/package/svelte-smartscroll)
+[![license][license-shields]](https://github.com/valmisson/svelte-smartscroll/blob/main/LICENSE)
 
-A Svelte plugin for scroll to hash links with smooth animations
+Scroll to given elements with smooth animation.
 
 ## Install
 ```bash
@@ -13,7 +13,6 @@ yarn add svelte-smartscroll
 ## Usage
 
 ```html
-<!-- App.svelte -->
 <script>
   import { scrollTo, scrollRef } from 'svelte-smartscroll'
 </script>
@@ -21,7 +20,7 @@ yarn add svelte-smartscroll
 <nav>
   <a use:scrollTo={'home'}>Home</a>
   <a use:scrollTo={'about'}>About</a>
-  <a use:scrollTo={'blog'}>Blog</a>
+  <a use:scrollTo={{ ref: 'blog', duration: 1000 }}>Blog</a>
 </nav>
 
 <section use:scrollRef={'home'}></section>
@@ -29,7 +28,46 @@ yarn add svelte-smartscroll
 <section use:scrollRef={'blog'}></section>
 ```
 
+### Actions
+
+#### `scrollTo={ string | Object }`
+
+Accepts only the element reference or the global options.
+
+#### `scrollRef={ string }`
+
+Accepts a string with the name to reference the element
+
+## API
+
+### Global Options
+
+| Property | Default | Description |
+|:--------:|:-------:|:-----------:|
+| `ref` | `""` | Element reference. |
+| `offset` | `0` | Offset that should be applied when scrolling. |
+| `duration` | `500` | Duration (in milliseconds) of the animation. |
+| `delay` | `0` | Delay to scrolling |
+
+### Override global options
+
+```html
+<script>
+  import { setGlobalOptions } from 'svelte-smartscroll'
+
+  setGlobalOptions({
+    offset: 50,
+    duration: 800,
+    delay: 200
+  })
+</script>
+```
+
 ## License
 [MIT](LICENSE)
 
 Copyright (c) 2021 Valmisson Grizorte
+
+
+[npm-shields]: https://img.shields.io/npm/v/svelte-smartscroll.svg
+[license-shields]: https://img.shields.io/github/license/valmisson/svelte-smartscroll.svg
