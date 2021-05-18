@@ -1,8 +1,11 @@
-interface ScrollToOpts {
-  ref: string
+interface GlobalOptions {
   offset: number
   duration: number
   delay: number
+}
+
+interface ScrollToOpts extends GlobalOptions {
+  ref: string
 }
 
 interface SmoothOptions {
