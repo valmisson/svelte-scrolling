@@ -47,6 +47,7 @@ Accepts a string with the name to reference the element
 | `ref` | `""` | Element reference. |
 | `offset` | `0` | Offset that should be applied when scrolling. |
 | `duration` | `500` | Duration (in milliseconds) of the animation. |
+| `easing` | `cubicInOut` | Easing function to be used when animating. Use any easing from [`svelte/easing`][svelte-easing] or a custom easing function. |
 
 ### Override global options
 
@@ -69,3 +70,4 @@ Copyright (c) 2021 Valmisson Grizorte
 
 [npm-shields]: https://img.shields.io/npm/v/svelte-smartscroll.svg
 [license-shields]: https://img.shields.io/github/license/valmisson/svelte-smartscroll.svg
+[svelte-easing]: https://svelte.dev/docs#svelte_easing

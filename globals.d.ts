@@ -1,6 +1,7 @@
 interface GlobalOptions {
   offset: number
   duration: number
+  easing: (t: number) => number
 }
 
 interface ScrollToOpts extends GlobalOptions {
@@ -11,6 +12,7 @@ interface SmoothOptions {
   start: number
   end: number
   duration: number
+  easing: (t: number) => number
 }
 
 interface ElementRef {

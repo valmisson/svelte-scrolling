@@ -15,7 +15,7 @@ const globalOpts = getGlobalOptions()
 const handle = (event: Event, options: ScrollToOpts): void => {
   event.preventDefault()
 
-  const { ref, offset, duration } = options
+  const { ref, offset, duration, easing } = options
   const element = getElement(elementsList, ref)
 
   if (!element) {
@@ -25,7 +25,7 @@ const handle = (event: Event, options: ScrollToOpts): void => {
   const start = window.pageYOffset
   const end = getPosition(element) + offset
 
-  smoothScroll({ start, end, duration }, (position: number) => {
+  smoothScroll({ start, end, duration, easing }, (position: number) => {
     window.scroll(0, position)
   })
 }
