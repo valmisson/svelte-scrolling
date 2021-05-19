@@ -47,7 +47,6 @@ Accepts a string with the name to reference the element
 | `ref` | `""` | Element reference. |
 | `offset` | `0` | Offset that should be applied when scrolling. |
 | `duration` | `500` | Duration (in milliseconds) of the animation. |
-| `delay` | `0` | Delay to scrolling |
 
 ### Override global options
 
@@ -57,8 +56,7 @@ Accepts a string with the name to reference the element
 
   setGlobalOptions({
     offset: 50,
-    duration: 800,
-    delay: 200
+    duration: 800
   })
 </script>
 ```

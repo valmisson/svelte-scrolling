@@ -16,8 +16,8 @@ const smoothScroll = (
   options: SmoothOptions,
   callback: (positon: number) => void
 ): void => {
-  const { start, end, duration, delay } = options
-  const clock = now() + delay
+  const { start, end, duration } = options
+  const clock = now()
 
   const step = () => {
     const elapsed = now() - clock
