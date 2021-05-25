@@ -18,6 +18,7 @@
       "@src/*": ["src/*"],
       "@api/*": ["src/api/*"],
       "@actions/*": ["src/actions/*"],
+      "@functions/*": ["src/functions/*"],
       "@helpers": ["src/helpers/index.ts"]
     }
   },

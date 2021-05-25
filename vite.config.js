@@ -15,6 +15,7 @@ export default defineConfig({
       '@src': resolve(__dirname, 'src'),
       '@api': resolve(__dirname, 'src/api'),
       '@actions': resolve(__dirname, 'src/actions'),
+      '@functions': resolve(__dirname, 'src/functions'),
       '@helpers': resolve(__dirname, 'src/helpers/index.ts')
     }
   },

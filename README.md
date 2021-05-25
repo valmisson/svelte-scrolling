@@ -14,7 +14,7 @@ yarn add svelte-smartscroll
 
 ```html
 <script>
-  import { scrollTo, scrollRef } from 'svelte-smartscroll'
+  import { scrollTo, scrollRef, scrollTop } from 'svelte-smartscroll'
 </script>
 
 <nav>
@@ -26,6 +26,8 @@ yarn add svelte-smartscroll
 <section use:scrollRef={'home'}></section>
 <section use:scrollRef={'about'}></section>
 <section use:scrollRef={'blog'}></section>
+
+<button on:click={scrollTop}>Go to top</button>
 ```
 
 ### Actions
@@ -37,6 +39,16 @@ Accepts only the element reference or the global options.
 #### `scrollRef={ string }`
 
 Accepts a string with the name to reference the element
+
+### Functions
+
+#### `scrollTop(options?)`
+
+Scroll to the top of the page
+
+#### `scrollBottom(options?)`
+
+Scroll to the end of the page
 
 ## API
 
