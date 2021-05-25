@@ -1,5 +1,4 @@
 export { default as scrollTo } from '@actions/ScrollTo'
 export { default as scrollRef } from '@actions/ScrollRef'
-export { default as scrollTop } from '@functions/scrollTop'
-export { default as scrollBottom } from '@functions/scrollBottom'
+export { scrollTop, scrollBottom } from '@functions/scrolling'
 export { default as setGlobalOptions } from '@api/globalOptions'

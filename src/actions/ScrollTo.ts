@@ -5,7 +5,7 @@ import {
   sanitize,
   getElement,
   getPosition,
-  smoothScroll
+  scrolling
 } from '@helpers'
 
 const elementsList = get(elements)
@@ -22,12 +22,7 @@ const handle = (event: Event, options: ScrollToOpts): void => {
     throw new Error('Element not found')
   }
 
-  const start = window.pageYOffset
-  const end = getPosition(element) + offset
-
-  smoothScroll({ start, end, duration, easing }, (position: number) => {
-    window.scroll(0, position)
-  })
+  scrolling(getPosition(element), { duration, offset, easing })
 }
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
