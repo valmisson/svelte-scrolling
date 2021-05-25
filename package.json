@@ -1,12 +1,12 @@
 {
-  "name": "svelte-smartscroll",
+  "name": "svelte-scrolling",
   "version": "0.1.0",
   "description": "A smart scrolling Svelte plugin",
   "author": "Valmisson Grizorte",
   "license": "MIT",
   "svelte": "src/index.ts",
-  "main": "dist/svelte-smartscroll.umd.js",
-  "module": "dist/svelte-smartscroll.es.js",
+  "main": "dist/svelte-scrolling.umd.js",
+  "module": "dist/svelte-scrolling.es.js",
   "scripts": {
     "build": "vite build",
     "lint": "eslint src/**/*.{js,ts,svelte}",
@@ -38,15 +38,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/valmisson/svelte-smartscroll.git"
+    "url": "https://github.com/valmisson/svelte-scrolling.git"
   },
   "bugs": {
-    "url": "https://github.com/valmisson/svelte-smartscroll/issues"
+    "url": "https://github.com/valmisson/svelte-scrolling/issues"
   },
-  "homepage": "https://github.com/valmisson/svelte-smartscroll#README",
+  "homepage": "https://github.com/valmisson/svelte-scrolling#README",
   "keywords": [
     "svelte",
-    "smartscroll"
+    "scrolling"
   ],
   "files": [
     "src",
@@ -54,8 +54,9 @@
   ],
   "exports": {
     ".": {
-      "import": "./dist/svelte-smartscroll.es.js",
-      "require": "./dist/svelte-smartscroll.umd.js"
+      "import": "./dist/svelte-scrolling.es.js",
+      "require": "./dist/svelte-scrolling.umd.js"
     }
-  }
+  },
+  "dependencies": {}
 }

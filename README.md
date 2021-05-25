@@ -1,20 +1,20 @@
-# svelte-smartscroll
+# svelte-scrolling
 
-[![npm][npm-shields]](https://www.npmjs.com/package/svelte-smartscroll)
-[![license][license-shields]](https://github.com/valmisson/svelte-smartscroll/blob/main/LICENSE)
+[![npm][npm-shields]](https://www.npmjs.com/package/svelte-scrolling)
+[![license][license-shields]](https://github.com/valmisson/svelte-scrolling/blob/main/LICENSE)
 
 Scroll to given elements with smooth animation.
 
 ## Install
 ```bash
-yarn add svelte-smartscroll
+yarn add svelte-scrolling
 ```
 
 ## Usage
 
 ```html
 <script>
-  import { scrollTo, scrollRef, scrollTop } from 'svelte-smartscroll'
+  import { scrollTo, scrollRef, scrollTop } from 'svelte-scrolling'
 </script>
 
 <nav>
@@ -72,7 +72,7 @@ Scroll to the end of the page
 
 ```html
 <script>
-  import { setGlobalOptions } from 'svelte-smartscroll'
+  import { setGlobalOptions } from 'svelte-scrolling'
 
   setGlobalOptions({
     offset: 50,
@@ -87,6 +87,6 @@ Scroll to the end of the page
 Copyright (c) 2021 Valmisson Grizorte
 
 
-[npm-shields]: https://img.shields.io/npm/v/svelte-smartscroll.svg
-[license-shields]: https://img.shields.io/github/license/valmisson/svelte-smartscroll.svg
+[npm-shields]: https://img.shields.io/npm/v/svelte-scrolling.svg
+[license-shields]: https://img.shields.io/github/license/valmisson/svelte-scrolling.svg
 [svelte-easing]: https://svelte.dev/docs#svelte_easing
