@@ -32,13 +32,21 @@ yarn add svelte-smartscroll
 
 ### Actions
 
-#### `scrollTo={ string | Object }`
+#### `scrollTo={reference | options}`
 
-Accepts only the element reference or the global options.
+This action listens for click (touchstart) events and scrolls to elements with smooth animation.
 
-#### `scrollRef={ string }`
+Accepts as parameter only the element reference or all global options:
 
-Accepts a string with the name to reference the element
+- `ref`: Element reference.
+
+*To set the global options, the `ref` property is required*
+
+#### `scrollRef={string}`
+
+This action adds a reference to the elements that `scrollTo` should scroll
+
+Accepts as parameter a string with the name to reference the element
 
 ### Functions
 
@@ -56,9 +64,8 @@ Scroll to the end of the page
 
 | Property | Default | Description |
 |:--------:|:-------:|:-----------:|
-| `ref` | `""` | Element reference. |
-| `offset` | `0` | Offset that should be applied when scrolling. |
 | `duration` | `500` | Duration (in milliseconds) of the animation. |
+| `offset` | `0` | Offset that should be applied when scrolling. |
 | `easing` | `cubicInOut` | Easing function to be used when animating. Use any easing from [`svelte/easing`][svelte-easing] or a custom easing function. |
 
 ### Override global options
