@@ -6,7 +6,7 @@ const globalOptions = getGlobalOptions()
 const scrolling = (
   endPosition: number,
   opts?: GlobalOptions
-) => {
+): void => {
   const options = Object.assign(globalOptions, opts)
 
   const start = window.pageYOffset
