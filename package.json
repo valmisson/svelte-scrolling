@@ -12,6 +12,9 @@
     "lint": "eslint src/**/*.{js,ts,svelte}",
     "prepublishOnly": "npm run build"
   },
+  "peerDependencies": {
+    "svelte": "^3.38.2"
+  },
   "devDependencies": {
     "@svitejs/vite-plugin-svelte": "^0.11.1",
     "@typescript-eslint/eslint-plugin": "^4.25.0",
@@ -57,6 +60,5 @@
       "import": "./dist/svelte-scrolling.es.js",
       "require": "./dist/svelte-scrolling.umd.js"
     }
-  },
-  "dependencies": {}
+  }
 }
