@@ -1,7 +1,7 @@
 {
   "name": "svelte-scrolling",
   "version": "0.1.0",
-  "description": "A smart scrolling Svelte plugin",
+  "description": "Scroll to given elements with smooth animation",
   "author": "Valmisson Grizorte",
   "license": "MIT",
   "svelte": "src/index.ts",
