@@ -88,5 +88,5 @@ Copyright (c) 2021 Valmisson Grizorte
 
 
 [npm-shields]: https://img.shields.io/npm/v/svelte-scrolling.svg
-[license-shields]: https://img.shields.io/npm/l/svelte-scrolling.svg
+[license-shields]: https://img.shields.io/badge/license-MIT-green
 [svelte-easing]: https://svelte.dev/docs#svelte_easing
