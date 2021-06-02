@@ -28,7 +28,7 @@ const handle = (event: Event, options: ScrollToOptions): void => {
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 const scrollTo = (
-  node: HTMLLinkElement,
+  node: HTMLElement,
   opts: ScrollToOptions | string
 ) => {
   if (!opts) {
@@ -51,7 +51,10 @@ const scrollTo = (
   }
 
   options.ref = ref
-  node.href = ref
+
+  if (node instanceof HTMLLinkElement) {
+    node.href = ref
+  }
 
   if (node.tagName !== 'A') {
     node.style.cursor = 'pointer'
