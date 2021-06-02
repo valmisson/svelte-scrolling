@@ -4,10 +4,13 @@
   "description": "Scroll to given elements with smooth animation",
   "author": "Valmisson Grizorte",
   "license": "MIT",
-  "main": "dist/svelte-scrolling.umd.js",
-  "module": "dist/svelte-scrolling.es.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "build": "vite build",
+    "build": "tsc --build",
     "lint": "eslint src/**/*.{js,ts,svelte}",
     "prepublishOnly": "npm run build"
   },
@@ -49,14 +52,5 @@
   "keywords": [
     "svelte",
     "scrolling"
-  ],
-  "files": [
-    "dist"
-  ],
-  "exports": {
-    ".": {
-      "import": "./dist/svelte-scrolling.es.js",
-      "require": "./dist/svelte-scrolling.umd.js"
-    }
-  }
+  ]
 }
