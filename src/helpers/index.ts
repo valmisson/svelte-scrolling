@@ -1,4 +1,4 @@
-import type { ElementReference } from '@src/types/options'
+import type { ElementReference } from '../types/options'
 
 export { default as scrolling } from './scrolling'
 

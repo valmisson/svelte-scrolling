@@ -1,6 +1,6 @@
 import { get } from 'svelte/store'
-import { sanitize } from '@src/helpers'
-import { elements } from '@src/stores'
+import { sanitize } from '../helpers'
+import { elements } from '../stores'
 
 const elementsList = get(elements)
 

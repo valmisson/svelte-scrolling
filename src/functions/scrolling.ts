@@ -1,5 +1,5 @@
-import { scrolling } from '@helpers'
-import type { GlobalOptions } from '@src/types/options'
+import { scrolling } from '../helpers'
+import type { GlobalOptions } from '../types/options'
 
 export const scrollTop = (
   options?: GlobalOptions

@@ -12,15 +12,7 @@
     "experimentalDecorators": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
-    "removeComments": false,
-    "paths": {
-      "~/*": ["./*"],
-      "@src/*": ["src/*"],
-      "@api/*": ["src/api/*"],
-      "@actions/*": ["src/actions/*"],
-      "@functions/*": ["src/functions/*"],
-      "@helpers": ["src/helpers/index.ts"]
-    }
+    "removeComments": false
   },
   "include": [
     "src/**/*.ts",

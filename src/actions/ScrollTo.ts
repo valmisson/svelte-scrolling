@@ -1,13 +1,13 @@
 import { get } from 'svelte/store'
-import { elements } from '@src/stores'
-import { getGlobalOptions } from '@api/globalOptions'
-import type { ScrollToOptions } from '@src/types/options'
+import { elements } from '../stores'
+import { getGlobalOptions } from '../api/globalOptions'
+import type { ScrollToOptions } from '../types/options'
 import {
   sanitize,
   getElement,
   getPosition,
   scrolling
-} from '@helpers'
+} from '../helpers'
 
 const elementsList = get(elements)
 const globalOpts = getGlobalOptions()
