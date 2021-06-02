@@ -1,6 +1,7 @@
 import { get } from 'svelte/store'
 import { elements } from '@src/stores'
 import { getGlobalOptions } from '@api/globalOptions'
+import type { ScrollToOptions } from '@src/types/options'
 import {
   sanitize,
   getElement,
@@ -12,7 +13,7 @@ const elementsList = get(elements)
 const globalOpts = getGlobalOptions()
 
 // handle with scrolling
-const handle = (event: Event, options: ScrollToOpts): void => {
+const handle = (event: Event, options: ScrollToOptions): void => {
   event.preventDefault()
 
   const { ref, offset, duration, easing } = options
@@ -28,13 +29,13 @@ const handle = (event: Event, options: ScrollToOpts): void => {
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 const scrollTo = (
   node: HTMLLinkElement,
-  opts: ScrollToOpts | string
+  opts: ScrollToOptions | string
 ) => {
   if (!opts) {
     throw new Error('scrollTo require a options')
   }
 
-  let options: ScrollToOpts = {
+  let options: ScrollToOptions = {
     ref: '',
     ...globalOpts
   }

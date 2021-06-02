@@ -1,24 +1,21 @@
-interface GlobalOptions {
+export interface GlobalOptions {
   offset: number
   duration: number
   easing: (t: number) => number
 }
 
-interface ScrollToOpts extends GlobalOptions {
+export interface ScrollToOptions extends GlobalOptions {
   ref: string
 }
 
-interface SmoothOptions {
+export interface SmoothOptions {
   start: number
   end: number
   duration: number
   easing: (t: number) => number
 }
 
-interface ElementRef {
+export interface ElementReference {
   node: HTMLElement
   hash: string
 }
-
-/// <reference types="svelte" />
-/// <reference types="vite/client" />

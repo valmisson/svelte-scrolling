@@ -4,7 +4,6 @@
   "description": "Scroll to given elements with smooth animation",
   "author": "Valmisson Grizorte",
   "license": "MIT",
-  "svelte": "src/index.ts",
   "main": "dist/svelte-scrolling.umd.js",
   "module": "dist/svelte-scrolling.es.js",
   "scripts": {
@@ -52,7 +51,6 @@
     "scrolling"
   ],
   "files": [
-    "src",
     "dist"
   ],
   "exports": {

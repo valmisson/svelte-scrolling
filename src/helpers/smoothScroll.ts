@@ -1,4 +1,5 @@
 import { now } from 'svelte/internal'
+import type { SmoothOptions } from '@src/types/options'
 
 const currentPosition = (
   start: number,

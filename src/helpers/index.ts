@@ -1,3 +1,5 @@
+import type { ElementReference } from '@src/types/options'
+
 export { default as scrolling } from './scrolling'
 
 export const sanitize = (hash: string): string => {
@@ -7,7 +9,7 @@ export const sanitize = (hash: string): string => {
 }
 
 export const getElement = (
-  elementsList: Array<ElementRef>,
+  elementsList: Array<ElementReference>,
   hash: string
 ): HTMLElement | null => {
   const elements = elementsList.filter(element => {
