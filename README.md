@@ -1,4 +1,4 @@
-# svelte-scrolling
+# Svelte Scrolling
 
 [![npm][npm-shields]](https://www.npmjs.com/package/svelte-scrolling)
 [![license][license-shields]](https://github.com/valmisson/svelte-scrolling/blob/main/LICENSE)
@@ -27,7 +27,7 @@ yarn add svelte-scrolling
 <section use:scrollRef={'about'}></section>
 <section use:scrollRef={'blog'}></section>
 
-<button on:click={() => scrollTop}>Go to top</button>
+<button on:click={() => scrollTop()}>Go to top</button>
 ```
 
 ### Actions
@@ -75,7 +75,6 @@ Scroll to the end of the page
   import { setGlobalOptions } from 'svelte-scrolling'
 
   setGlobalOptions({
-    offset: 50,
     duration: 800
   })
 </script>
