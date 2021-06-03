@@ -12,6 +12,7 @@
   "scripts": {
     "build": "tsc --build",
     "lint": "eslint src/**/*.{js,ts,svelte}",
+    "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 1 && git add CHANGELOG.md",
     "prepublishOnly": "npm run build"
   },
   "peerDependencies": {
@@ -21,6 +22,7 @@
     "@svitejs/vite-plugin-svelte": "^0.11.1",
     "@typescript-eslint/eslint-plugin": "^4.25.0",
     "@typescript-eslint/parser": "^4.25.0",
+    "conventional-changelog-cli": "^2.1.1",
     "eslint": "^7.27.0",
     "eslint-config-standard": "^16.0.3",
     "eslint-plugin-import": "^2.23.3",
