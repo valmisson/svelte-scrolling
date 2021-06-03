@@ -4,7 +4,6 @@
     "outDir": "dist",
     "sourceMap": false,
     "target": "es2018",
-    "lib": ["es2018"],
     "module": "commonjs",
     "moduleResolution": "node",
     "allowJs": false,
@@ -14,7 +13,13 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "removeComments": true,
-    "declaration": true
+    "declaration": true,
+    "skipLibCheck": true,
+    "lib": [
+      "es2018",
+      "dom",
+      "dom.iterable"
+    ]
   },
   "include": [
     "src/**/*.ts",
