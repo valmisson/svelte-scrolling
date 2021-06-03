@@ -27,7 +27,7 @@ yarn add svelte-scrolling
 <section use:scrollRef={'about'}></section>
 <section use:scrollRef={'blog'}></section>
 
-<button on:click={scrollTop}>Go to top</button>
+<button on:click={() => scrollTop}>Go to top</button>
 ```
 
 ### Actions
