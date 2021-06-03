@@ -1,4 +1,14 @@
-# 1.0.1
+## [1.0.2](https://github.com/valmisson/svelte-scrolling/compare/v1.0.1...v1.0.2) (2021-06-03)
+
+
+### Bug Fixes
+
+* `node` argument type incompatible in `scrollTo` ([091907c](https://github.com/valmisson/svelte-scrolling/commit/091907c7a704ddb233dd0d5b0631bf3f5912dcf0))
+* set the properties of global option in scrolling functions as optional ([5d2579d](https://github.com/valmisson/svelte-scrolling/commit/5d2579d8b1861d60c6711d31d7dc4792175a66a9))
+
+
+
+## 1.0.1
 
 ### Features
 
