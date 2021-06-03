@@ -29,28 +29,28 @@ const handle = (event: Event, options: ScrollToOptions): void => {
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 const scrollTo = (
   node: HTMLElement,
-  opts: ScrollToOptions | string
+  options: ScrollToOptions | string
 ) => {
-  if (!opts) {
+  if (!options) {
     throw new Error('scrollTo require a options')
   }
 
-  let options: ScrollToOptions = {
+  let opts: ScrollToOptions = {
     ref: '',
     ...globalOpts
   }
 
-  typeof opts === 'string'
-    ? options.ref = opts
-    : options = Object.assign(options, opts)
+  typeof options === 'string'
+    ? opts.ref = options
+    : opts = Object.assign(options, opts)
 
-  const ref = sanitize(options.ref)
+  const ref = sanitize(opts.ref)
 
   if (!ref) {
     throw new Error('scrollTo require a reference')
   }
 
-  options.ref = ref
+  opts.ref = ref
 
   if (node instanceof HTMLLinkElement) {
     node.href = ref
@@ -60,13 +60,13 @@ const scrollTo = (
     node.style.cursor = 'pointer'
   }
 
-  node.addEventListener('click', event => handle(event, options))
-  node.addEventListener('touchstart', event => handle(event, options))
+  node.addEventListener('click', event => handle(event, opts))
+  node.addEventListener('touchstart', event => handle(event, opts))
 
   return {
     destroy () {
-      node.removeEventListener('click', event => handle(event, options))
-      node.removeEventListener('touchstart', event => handle(event, options))
+      node.removeEventListener('click', event => handle(event, opts))
+      node.removeEventListener('touchstart', event => handle(event, opts))
     }
   }
 }

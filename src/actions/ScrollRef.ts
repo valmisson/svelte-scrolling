@@ -7,15 +7,15 @@ const elementsList = get(elements)
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 const scrollRef = (
   node: HTMLElement,
-  hash: string
+  reference: string
 ) => {
-  if (!hash) {
+  if (!reference) {
     throw new Error('scrollRef require a hash')
   }
 
   elementsList.push({
     node,
-    hash: sanitize(hash)
+    reference: sanitize(reference)
   })
 
   return {

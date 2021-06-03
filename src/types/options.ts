@@ -17,5 +17,5 @@ export interface SmoothOptions {
 
 export interface ElementReference {
   node: HTMLElement
-  hash: string
+  reference: string
 }

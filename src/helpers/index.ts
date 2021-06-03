@@ -10,12 +10,12 @@ export const sanitize = (hash: string): string => {
 
 export const getElement = (
   elementsList: Array<ElementReference>,
-  hash: string
+  reference: string
 ): HTMLElement | null => {
   const elements = elementsList.filter(element => {
-    const elementHash = element.hash
+    const elementRef = element.reference
 
-    return elementHash === hash
+    return elementRef === reference
   })
 
   return elements.length ? elements[0].node : null
