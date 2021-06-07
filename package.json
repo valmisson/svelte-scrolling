@@ -51,6 +51,15 @@
   "homepage": "https://github.com/valmisson/svelte-scrolling#README",
   "keywords": [
     "svelte",
-    "scrolling"
+    "svelte3",
+    "scroll",
+    "scrolling",
+    "scrollto",
+    "animation",
+    "smooth",
+    "smoothscroll",
+    "anchor",
+    "navigation",
+    "lightweight"
   ]
 }
