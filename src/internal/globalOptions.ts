@@ -1,5 +1,5 @@
 import { get } from 'svelte/store'
-import { globalOptions } from '../stores'
+import { globalOptions } from '../store'
 import type { GlobalOptions } from '../types/options'
 
 const globalOpts = get(globalOptions)

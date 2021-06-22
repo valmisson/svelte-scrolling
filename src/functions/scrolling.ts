@@ -1,5 +1,5 @@
-import { scrolling } from '../helpers'
-import { getGlobalOptions } from '../api/globalOptions'
+import { getGlobalOptions } from '../internal/globalOptions'
+import scrolling from '../shared/scrolling'
 
 const globalOptions = getGlobalOptions()
 

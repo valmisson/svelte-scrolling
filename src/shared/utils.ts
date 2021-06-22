@@ -1,6 +1,4 @@
-import type { ElementReference } from '../types/options'
-
-export { default as scrolling } from './scrolling'
+import type { ElementReference } from '../types/reference'
 
 export const sanitize = (hash: string): string => {
   return hash

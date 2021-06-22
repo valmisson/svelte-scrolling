@@ -1,5 +1,5 @@
 import smoothScroll from './smoothScroll'
-import { getGlobalOptions } from '../api/globalOptions'
+import { getGlobalOptions } from '../internal/globalOptions'
 import type { GlobalOptions } from '../types/options'
 
 const globalOptions = getGlobalOptions()

@@ -14,8 +14,3 @@ export interface SmoothOptions {
   duration: number
   easing: (t: number) => number
 }
-
-export interface ElementReference {
-  node: HTMLElement
-  reference: string
-}
