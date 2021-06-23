@@ -11,7 +11,7 @@ export const getGlobalOptions = (): GlobalOptions => {
 /**
  * Override global options
  *
- * @param options - object
+ * @param options - The global options
  */
 
 const setGlobalOptions = (options: GlobalOptions): void => {

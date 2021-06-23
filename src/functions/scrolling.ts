@@ -12,7 +12,7 @@ type GlobalOptions = {
 /**
  * Scroll to the top of the page
  *
- * @param options - object | undefined
+ * @param options - An optional param with global options
  */
 
 export const scrollTop = (
@@ -26,7 +26,7 @@ export const scrollTop = (
 /**
  * Scroll to the end of the page
  *
- * @param options - object | undefined
+ * @param options - An optional param with global options
  */
 
 export const scrollBottom = (

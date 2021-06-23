@@ -25,8 +25,7 @@ const handle = (event: Event, options: ScrollToOptions): void => {
 /**
  * Listens for click (touchstart) events and scrolls to elements with smooth animation
  *
- * @param node - HTMLElement
- * @param options - object | string
+ * @param options - The element reference or global options
  */
 
 const scrollTo = ( // eslint-disable-line @typescript-eslint/explicit-module-boundary-types

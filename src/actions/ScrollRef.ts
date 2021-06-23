@@ -7,8 +7,7 @@ const elementsList = get(elements)
 /**
  * Adds a reference to the elements that `scrollTo` should scroll
  *
- * @param node - HTMLElement
- * @param reference - string
+ * @param reference - The reference element
  */
 
 const scrollRef = ( // eslint-disable-line @typescript-eslint/explicit-module-boundary-types
