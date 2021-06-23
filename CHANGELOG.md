@@ -1,3 +1,12 @@
+## [1.0.5](https://github.com/valmisson/svelte-scrolling/compare/v1.0.4...v1.0.5) (2021-06-23)
+
+
+### Bug Fixes
+
+* **docs:** remove the `node` param and change the description of the params ([eba0b10](https://github.com/valmisson/svelte-scrolling/commit/eba0b105ffaa7db5ef17ea7ab9aad930fd722eda))
+
+
+
 ## [1.0.4](https://github.com/valmisson/svelte-scrolling/compare/v1.0.3...v1.0.4) (2021-06-23)
 
 
