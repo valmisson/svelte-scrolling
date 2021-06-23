@@ -9,6 +9,12 @@ type GlobalOptions = {
   easing?: (t: number) => number
 }
 
+/**
+ * Scroll to the top of the page
+ *
+ * @param options - object | undefined
+ */
+
 export const scrollTop = (
   options?: GlobalOptions
 ): void => {
@@ -16,6 +22,12 @@ export const scrollTop = (
 
   scrolling(0, opts)
 }
+
+/**
+ * Scroll to the end of the page
+ *
+ * @param options - object | undefined
+ */
 
 export const scrollBottom = (
   options?: GlobalOptions

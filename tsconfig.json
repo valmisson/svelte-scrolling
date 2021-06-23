@@ -12,7 +12,7 @@
     "experimentalDecorators": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
-    "removeComments": true,
+    "removeComments": false,
     "declaration": true,
     "skipLibCheck": true,
     "lib": [

@@ -8,6 +8,12 @@ export const getGlobalOptions = (): GlobalOptions => {
   return globalOpts
 }
 
+/**
+ * Override global options
+ *
+ * @param options - object
+ */
+
 const setGlobalOptions = (options: GlobalOptions): void => {
   globalOptions.update(() => Object.assign(globalOpts, options))
 }

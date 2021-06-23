@@ -22,8 +22,14 @@ const handle = (event: Event, options: ScrollToOptions): void => {
   scrolling(getPosition(element), { duration, offset, easing })
 }
 
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-const scrollTo = (
+/**
+ * Listens for click (touchstart) events and scrolls to elements with smooth animation
+ *
+ * @param node - HTMLElement
+ * @param options - object | string
+ */
+
+const scrollTo = ( // eslint-disable-line @typescript-eslint/explicit-module-boundary-types
   node: HTMLElement,
   options: ScrollToOptions | string
 ) => {

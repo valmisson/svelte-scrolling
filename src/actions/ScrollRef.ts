@@ -4,8 +4,14 @@ import { elements } from '../store'
 
 const elementsList = get(elements)
 
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-const scrollRef = (
+/**
+ * Adds a reference to the elements that `scrollTo` should scroll
+ *
+ * @param node - HTMLElement
+ * @param reference - string
+ */
+
+const scrollRef = ( // eslint-disable-line @typescript-eslint/explicit-module-boundary-types
   node: HTMLElement,
   reference: string
 ) => {
