@@ -42,7 +42,7 @@ Accepts as parameter only the element reference or all global options:
 
 *To set the global options, the `ref` property is required*
 
-#### `scrollRef={string}`
+#### `scrollRef={reference}`
 
 This action adds a reference to the elements that `scrollTo` should scroll
 
