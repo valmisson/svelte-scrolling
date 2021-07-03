@@ -30,7 +30,7 @@ const handle = (event: Event, options: ScrollToOptions): void => {
 
 const scrollTo = ( // eslint-disable-line @typescript-eslint/explicit-module-boundary-types
   node: HTMLElement,
-  options: ScrollToOptions | string
+  options: string | ScrollToOptions
 ) => {
   if (!options) {
     throw new Error('scrollTo require a options')
