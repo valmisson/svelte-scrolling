@@ -30,7 +30,7 @@ yarn add svelte-scrolling
 <button on:click={() => scrollTop()}>Go to top</button>
 ```
 
-### Actions
+## Actions
 
 #### `scrollTo={reference | options}`
 
@@ -48,7 +48,7 @@ This action adds a reference to the elements that `scrollTo` should scroll
 
 Accepts as parameter a string with the name to reference the element
 
-### Functions
+## Functions
 
 #### `scrollTop(options?)`
 
