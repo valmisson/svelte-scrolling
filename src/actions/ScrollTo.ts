@@ -16,7 +16,7 @@ const handle = (event: Event, options: ScrollToOptions): void => {
   const element = getElement(elementsList, ref)
 
   if (!element) {
-    throw new Error('Element not found')
+    throw new Error(`Element reference '${ref}' not found`)
   }
 
   scrolling(getPosition(element), { duration, offset, easing })
@@ -53,11 +53,11 @@ const scrollTo = ( // eslint-disable-line @typescript-eslint/explicit-module-bou
 
   opts.ref = ref
 
-  if (node instanceof HTMLLinkElement) {
-    node.href = ref
+  if (node instanceof HTMLAnchorElement) {
+    node.href = `#${ref}`
   }
 
-  if (node.tagName !== 'A') {
+  if (node instanceof HTMLAnchorElement === false) {
     node.style.cursor = 'pointer'
   }
 
