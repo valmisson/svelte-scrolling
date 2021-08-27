@@ -1,3 +1,12 @@
+## [1.0.8](https://github.com/valmisson/svelte-scrolling/compare/v1.0.7...v1.0.8) (2021-08-27)
+
+
+### Bug Fixes
+
+* add href to anchor element or cursor pointer to different element ([44f4b51](https://github.com/valmisson/svelte-scrolling/commit/44f4b51032ed2a50b650619f3cf224f92d412471))
+
+
+
 ## [1.0.7](https://github.com/valmisson/svelte-scrolling/compare/v1.0.6...v1.0.7) (2021-07-03)
 
 
