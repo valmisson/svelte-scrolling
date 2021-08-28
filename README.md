@@ -58,6 +58,10 @@ Scroll to the top of the page
 
 Scroll to the end of the page
 
+#### `scrollElement(reference | options)`
+
+Scroll to elements with smooth animation.
+
 ## API
 
 ### Global Options
