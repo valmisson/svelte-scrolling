@@ -2,7 +2,6 @@ import { get } from 'svelte/store'
 import { elements } from '../store'
 import { getGlobalOptions } from '../internal/globalOptions'
 import { getElement, getPosition, sanitize } from '../shared/utils'
-import type { ScrollToOptions } from '../types/options'
 import scrolling from '../shared/scrolling'
 
 const globalOptions = getGlobalOptions()
@@ -55,40 +54,27 @@ export const scrollBottom = (
 /**
  * Scroll to element
  *
- * @param options - The element reference or global options
+ * @param reference - The element reference
+ * @param options - An optional param with global options
  */
 
 export const scrollElement = (
-  options: string | ScrollToOptions
+  reference: string,
+  options?: GlobalOptions
 ): void => {
-  if (!options) {
-    throw new Error('scrollElement require a options')
+  if (!reference || typeof reference !== 'string') {
+    throw new Error('scrollElement require a reference valid')
   }
 
-  let opts: ScrollToOptions = {
-    ref: '',
-    ...globalOptions
-  }
-
-  typeof options === 'string'
-    ? opts.ref = options
-    : opts = Object.assign(options, opts)
-
-  const ref = sanitize(opts.ref)
-
-  if (!ref) {
-    throw new Error('scrollElement require a reference')
-  }
-
-  const { offset, duration, easing } = opts
+  const opts = Object.assign(globalOptions, options)
+  const ref = sanitize(reference)
 
   const elementsList = get(elements)
-
   const element = getElement(elementsList, ref)
 
   if (!element) {
     throw new Error(`Element reference '${ref}' not found`)
   }
 
-  scrolling(getPosition(element), { duration, offset, easing })
+  scrolling(getPosition(element), opts)
 }
