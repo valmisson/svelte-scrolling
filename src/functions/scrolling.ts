@@ -78,3 +78,23 @@ export const scrollElement = (
 
   scrolling(getPosition(element), opts)
 }
+
+/**
+ * Scroll to a position on the page
+ *
+ * @param position - The position
+ * @param options - An optional param with global options
+ */
+
+export const scrollPosition = (
+  position: number,
+  options?: GlobalOptions
+): void => {
+  if (!position || typeof position !== 'number') {
+    throw new Error('scrollPosition require a position value valid')
+  }
+
+  const opts = Object.assign(globalOptions, options)
+
+  scrolling(position, opts)
+}

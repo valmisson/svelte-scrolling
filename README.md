@@ -62,6 +62,10 @@ Scroll to the end of the page
 
 Scroll to element with smooth animation.
 
+#### `scrollPosition(position, options?)`
+
+Scroll to a position on the page
+
 ## API
 
 ### Global Options
