@@ -1,3 +1,13 @@
+# [1.1.0](https://github.com/valmisson/svelte-scrolling/compare/v1.0.8...v1.1.0) (2021-08-29)
+
+
+### Features
+
+* add function `scrollElement` ([#2](https://github.com/valmisson/svelte-scrolling/issues/2)) ([367c72a](https://github.com/valmisson/svelte-scrolling/commit/367c72a68c7e437f2edc5b851aa7e74cb50e1a03))
+* add function `scrollPosition` ([aaf23ee](https://github.com/valmisson/svelte-scrolling/commit/aaf23eeb601c035e60ea718c4a3d4bdce526feb1))
+
+
+
 ## [1.0.8](https://github.com/valmisson/svelte-scrolling/compare/v1.0.7...v1.0.8) (2021-08-27)
 
 
