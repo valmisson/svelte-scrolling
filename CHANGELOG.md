@@ -1,3 +1,7 @@
+## [1.1.1](https://github.com/valmisson/svelte-scrolling/compare/v1.1.0...v1.1.1) (2021-10-01)
+
+
+
 # [1.1.0](https://github.com/valmisson/svelte-scrolling/compare/v1.0.8...v1.1.0) (2021-08-29)
 
 
