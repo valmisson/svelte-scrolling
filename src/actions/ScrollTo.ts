@@ -6,7 +6,6 @@ import { sanitize, getElement, getPosition } from '../shared/utils'
 import scrolling from '../shared/scrolling'
 
 const elementsList = get(elements)
-const globalOpts = getGlobalOptions()
 
 // handle with scrolling
 const handle = (event: Event, options: ScrollToOptions): void => {
@@ -38,23 +37,21 @@ const scrollTo = ( // eslint-disable-line @typescript-eslint/explicit-module-bou
 
   let opts: ScrollToOptions = {
     ref: '',
-    ...globalOpts
+    ...getGlobalOptions()
   }
 
   typeof options === 'string'
     ? opts.ref = options
     : opts = Object.assign(options, opts)
 
-  const ref = sanitize(opts.ref)
+  opts.ref = sanitize(opts.ref)
 
-  if (!ref) {
+  if (!opts.ref) {
     throw new Error('scrollTo require a reference')
   }
 
-  opts.ref = ref
-
   if (node instanceof HTMLAnchorElement) {
-    node.href = `#${ref}`
+    node.href = `#${opts.ref}`
   }
 
   if (node instanceof HTMLAnchorElement === false) {
