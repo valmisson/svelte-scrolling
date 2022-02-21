@@ -2,15 +2,10 @@ import { get } from 'svelte/store'
 import { elements } from '../store'
 import { getGlobalOptions } from '../internal/globalOptions'
 import { getElement, getPosition, sanitize } from '../shared/utils'
+import type { GlobalOptions } from '../types/options'
 import scrolling from '../shared/scrolling'
 
 const globalOptions = getGlobalOptions()
-
-type GlobalOptions = {
-  offset?: number
-  duration?: number
-  easing?: (t: number) => number
-}
 
 /**
  * Scroll to the top of the page
@@ -19,7 +14,7 @@ type GlobalOptions = {
  */
 
 export const scrollTop = (
-  options?: GlobalOptions
+  options?: Partial<GlobalOptions>
 ): void => {
   const opts = Object.assign(globalOptions, options)
 
@@ -33,7 +28,7 @@ export const scrollTop = (
  */
 
 export const scrollBottom = (
-  options?: GlobalOptions
+  options?: Partial<GlobalOptions>
 ): void => {
   const opts = Object.assign(globalOptions, options)
 
@@ -60,7 +55,7 @@ export const scrollBottom = (
 
 export const scrollElement = (
   reference: string,
-  options?: GlobalOptions
+  options?: Partial<GlobalOptions>
 ): void => {
   if (!reference || typeof reference !== 'string') {
     throw new Error('scrollElement require a reference valid')
@@ -88,7 +83,7 @@ export const scrollElement = (
 
 export const scrollPosition = (
   position: number,
-  options?: GlobalOptions
+  options?: Partial<GlobalOptions>
 ): void => {
   if (!position || typeof position !== 'number') {
     throw new Error('scrollPosition require a position value valid')
