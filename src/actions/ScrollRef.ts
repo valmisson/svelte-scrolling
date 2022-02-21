@@ -2,8 +2,6 @@ import { get } from 'svelte/store'
 import { sanitize } from '../shared/utils'
 import { elements } from '../store'
 
-const elementsList = get(elements)
-
 /**
  * Adds a reference to the elements that `scrollTo` should scroll
  *
@@ -15,8 +13,10 @@ const scrollRef = ( // eslint-disable-line @typescript-eslint/explicit-module-bo
   reference: string
 ) => {
   if (!reference) {
-    throw new Error('scrollRef require a hash')
+    throw new Error('scrollRef require a reference')
   }
+
+  const elementsList = get(elements)
 
   elementsList.push({
     node,
