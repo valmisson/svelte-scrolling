@@ -13,12 +13,19 @@ const globalOptions = getGlobalOptions()
  * @param options - An optional param with global options
  */
 
-export const scrollTop = (
+export const scrollTop = async (
   options?: Partial<GlobalOptions>
-): void => {
+): Promise<void> => {
   const opts = Object.assign(globalOptions, options)
+  const endPosition = 0
 
-  scrolling(0, opts)
+  const { duration, offset, onStart, onDone } = opts
+
+  onStart && onStart({ offset, duration, endPosition })
+
+  await scrolling(endPosition, opts)
+
+  onDone && onDone({ offset, duration, endPosition })
 }
 
 /**
@@ -27,15 +34,17 @@ export const scrollTop = (
  * @param options - An optional param with global options
  */
 
-export const scrollBottom = (
+export const scrollBottom = async (
   options?: Partial<GlobalOptions>
-): void => {
+): Promise<void> => {
   const opts = Object.assign(globalOptions, options)
+
+  const { duration, offset, onStart, onDone } = opts
 
   const body = document.body
   const html = document.documentElement
 
-  const end = Math.max(
+  const endPosition = Math.max(
     body.scrollHeight,
     body.offsetHeight,
     html.scrollHeight,
@@ -43,7 +52,11 @@ export const scrollBottom = (
     html.offsetHeight
   )
 
-  scrolling(end, opts)
+  onStart && onStart({ offset, duration, endPosition })
+
+  await scrolling(endPosition, opts)
+
+  onDone && onDone({ offset, duration, endPosition })
 }
 
 /**
@@ -53,16 +66,18 @@ export const scrollBottom = (
  * @param options - An optional param with global options
  */
 
-export const scrollElement = (
+export const scrollElement = async (
   reference: string,
   options?: Partial<GlobalOptions>
-): void => {
+): Promise<void> => {
   if (!reference || typeof reference !== 'string') {
     throw new Error('scrollElement require a reference valid')
   }
 
   const opts = Object.assign(globalOptions, options)
   const ref = sanitize(reference)
+
+  const { duration, offset, onStart, onDone } = opts
 
   const elementsList = get(elements)
   const element = getElement(elementsList, ref)
@@ -71,7 +86,13 @@ export const scrollElement = (
     throw new Error(`Element reference '${ref}' not found`)
   }
 
-  scrolling(getPosition(element), opts)
+  const endPosition = getPosition(element)
+
+  onStart && onStart({ element, offset, duration, endPosition })
+
+  await scrolling(endPosition, opts)
+
+  onDone && onDone({ element, offset, duration, endPosition })
 }
 
 /**
@@ -81,15 +102,21 @@ export const scrollElement = (
  * @param options - An optional param with global options
  */
 
-export const scrollPosition = (
+export const scrollPosition = async (
   position: number,
   options?: Partial<GlobalOptions>
-): void => {
+): Promise<void> => {
   if (!position || typeof position !== 'number') {
     throw new Error('scrollPosition require a position value valid')
   }
 
   const opts = Object.assign(globalOptions, options)
+  const endPosition = position
+  const { duration, offset, onStart, onDone } = opts
 
-  scrolling(position, opts)
+  onStart && onStart({ offset, duration, endPosition })
+
+  await scrolling(endPosition, opts)
+
+  onDone && onDone({ offset, duration, endPosition })
 }

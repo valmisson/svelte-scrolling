@@ -13,27 +13,29 @@ const currentPosition = (
   return start + (end - start) * easing(elapsed / duration)
 }
 
-const smoothScroll = (
+const smoothScroll = async (
   options: SmoothOptions,
   callback: (positon: number) => void
-): void => {
-  const { start, end, duration, easing } = options
-  const clock = now()
+): Promise<void> => {
+  return new Promise(resolve => {
+    const { start, end, duration, easing } = options
+    const clock = now()
 
-  const step = () => {
-    const elapsed = now() - clock
-    const position = currentPosition(
-      start, end, elapsed, duration, easing
-    )
+    const step = () => {
+      const elapsed = now() - clock
+      const position = currentPosition(
+        start, end, elapsed, duration, easing
+      )
 
-    callback(position)
+      callback(position)
 
-    if (elapsed > duration) return
+      if (elapsed > duration) return resolve()
+
+      window.requestAnimationFrame(step)
+    }
 
     window.requestAnimationFrame(step)
-  }
-
-  window.requestAnimationFrame(step)
+  })
 }
 
 export default smoothScroll

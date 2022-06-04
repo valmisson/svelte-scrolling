@@ -4,16 +4,16 @@ import type { GlobalOptions } from '../types/options'
 
 const globalOptions = getGlobalOptions()
 
-const scrolling = (
+const scrolling = async (
   endPosition: number,
-  opts?: GlobalOptions
-): void => {
-  const options = Object.assign(globalOptions, opts)
+  opts: GlobalOptions
+): Promise<void> => {
+  const { duration, easing, offset } = Object.assign(globalOptions, opts)
 
   const start = window.pageYOffset
-  const end = endPosition + options.offset
+  const end = endPosition + offset
 
-  smoothScroll({ start, end, ...options }, (position: number) => {
+  await smoothScroll({ start, end, duration, easing }, (position: number) => {
     window.scroll(0, position)
   })
 }

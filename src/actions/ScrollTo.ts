@@ -8,17 +8,29 @@ import scrolling from '../shared/scrolling'
 const elementsList = get(elements)
 
 // handle with scrolling
-const handle = (event: Event, options: ScrollToOptions): void => {
+const handle = async (event: Event, options: ScrollToOptions): Promise<void> => {
   event.preventDefault()
 
-  const { ref, offset, duration, easing } = options
+  const { ref, onDone, onStart } = options
+
+  /* eslint-disable @typescript-eslint/no-non-null-assertion */
+  const duration = options.duration!
+  const offset = options.offset!
+  const easing = options.easing!
+
   const element = getElement(elementsList, ref)
 
   if (!element) {
     throw new Error(`Element reference '${ref}' not found`)
   }
 
-  scrolling(getPosition(element), { duration, offset, easing })
+  const endPosition = getPosition(element)
+
+  onStart && onStart({ element, offset, duration, endPosition })
+
+  await scrolling(endPosition, { duration, offset, easing })
+
+  onDone && onDone({ element, offset, duration, endPosition })
 }
 
 /**
@@ -42,7 +54,7 @@ const scrollTo = ( // eslint-disable-line @typescript-eslint/explicit-module-bou
 
   typeof options === 'string'
     ? opts.ref = options
-    : opts = Object.assign(options, opts)
+    : opts = Object.assign(opts, options)
 
   opts.ref = sanitize(opts.ref)
 
