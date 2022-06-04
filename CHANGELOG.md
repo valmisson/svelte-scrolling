@@ -1,3 +1,12 @@
+# [1.2.0](https://github.com/valmisson/svelte-scrolling/compare/v1.1.1...v1.2.0) (2022-06-04)
+
+
+### Features
+
+* add onStart and onDone hooks. close [#3](https://github.com/valmisson/svelte-scrolling/issues/3) ([d889e13](https://github.com/valmisson/svelte-scrolling/commit/d889e13514e0ca769a0e2870430f8b1e32a3fd7c))
+
+
+
 ## [1.1.1](https://github.com/valmisson/svelte-scrolling/compare/v1.1.0...v1.1.1) (2021-10-01)
 
 
