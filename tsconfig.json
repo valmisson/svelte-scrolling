@@ -1,32 +1,12 @@
 {
+  "extends": "@tsconfig/svelte/tsconfig.json",
+  "include": ["src/**/*"],
+  "exclude": ["node_modules/*", "dist/*"],
   "compilerOptions": {
     "baseUrl": ".",
-    "outDir": "dist",
-    "sourceMap": false,
-    "target": "es2018",
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "allowJs": false,
-    "strict": true,
-    "noUnusedLocals": true,
-    "experimentalDecorators": true,
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "removeComments": false,
     "declaration": true,
-    "skipLibCheck": true,
-    "lib": [
-      "es2018",
-      "dom",
-      "dom.iterable"
-    ]
+    "outDir": "dist"
   },
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.js",
-    "src/types/*.d.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["src/**/*.ts", "src/**/*.js", "src/types/*.d.ts"],
+  "exclude": ["node_modules"]
 }
