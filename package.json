@@ -5,11 +5,9 @@
   "author": "Valmisson Grizorte",
   "license": "MIT",
   "type": "module",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "src/index.ts",
   "files": [
-    "src",
-    "dist"
+    "src"
   ],
   "scripts": {
     "build": "tsc --build",
