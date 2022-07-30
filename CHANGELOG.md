@@ -1,3 +1,17 @@
+## [1.2.2](https://github.com/valmisson/svelte-scrolling/compare/v1.2.1...v1.2.2) (2022-07-30)
+
+
+### Bug Fixes
+
+* remove duplicate lines ([611f660](https://github.com/valmisson/svelte-scrolling/commit/611f6605b5ccf4738db0e0ccf5a6f56fa9ed5465))
+
+
+### Reverts
+
+* should keep dist folder and the types ([34019fe](https://github.com/valmisson/svelte-scrolling/commit/34019fe627678b4118881b577d87b2256e8776ee))
+
+
+
 ## [1.2.1](https://github.com/valmisson/svelte-scrolling/compare/v1.2.0...v1.2.1) (2022-06-04)
 
 
