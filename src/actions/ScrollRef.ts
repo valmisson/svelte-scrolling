@@ -51,6 +51,7 @@ const scrollRef = ( // eslint-disable-line @typescript-eslint/explicit-module-bo
   return {
     destroy () {
       elementsList.length = 0 // empty the elements list
+      window.removeEventListener('scroll', (e) => handleScroll(e, { node, ref: sanitize(reference) }))
     }
   }
 }
