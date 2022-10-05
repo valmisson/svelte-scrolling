@@ -84,6 +84,7 @@ Scroll to a position on the page
 | `easing` | `cubicInOut` | Easing function to be used when animating. Use any easing from [`svelte/easing`][svelte-easing] or a custom easing function. |
 | `onStart` | `noop` | A callback function that should be called when scrolling has started. Receives the element, offset, duration and endPosition as a parameter. |
 | `onDone` | `noop` | A callback function that should be called when scrolling has started. Receives the element, offset, duration and endPosition as a parameter. |
+| `onStateChange` | `noop` | A callback function that gets called when internal state changes. Receives the `{active}` parameter. `active` is true when the corresponding scrollRef is visible. This can be used in a navbar to show, where we currently are. |
 
 ### Override global options
 
