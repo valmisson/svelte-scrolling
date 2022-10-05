@@ -1,4 +1,4 @@
-import { ActorExtras } from './options'
+import type { ActorExtras } from './options'
 
 export interface ElementReference {
   node: HTMLElement

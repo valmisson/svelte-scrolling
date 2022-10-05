@@ -6,6 +6,13 @@
 Scroll to given elements with smooth animation.
 
 ## Install
+
+```bash
+npm i svelte-scrolling
+```
+
+or similar, like
+
 ```bash
 yarn add svelte-scrolling
 ```
