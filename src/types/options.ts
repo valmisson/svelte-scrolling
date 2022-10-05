@@ -20,6 +20,14 @@ export interface SmoothOptions {
   easing: (t: number) => number
 }
 
-export type ScrollToOptions = Partial<GlobalOptions> & {
+export interface StateChangeParams {
+  active: boolean,
+}
+
+export interface ActorExtras {
+  onStateChange?: (params: StateChangeParams) => void,
+}
+
+export type ScrollToOptions = Partial<GlobalOptions> & Partial<ActorExtras> & {
   ref: string
 }

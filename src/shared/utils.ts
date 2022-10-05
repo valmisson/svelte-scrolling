@@ -1,4 +1,4 @@
-import type { ElementReference } from '../types/reference'
+import type { ActorReference, ElementReference } from '../types/reference'
 
 export const sanitize = (hash: string): string => {
   return hash
@@ -17,6 +17,19 @@ export const getElement = (
   })
 
   return elements.length ? elements[0].node : null
+}
+
+export const getActor = (
+  actorsList: Array<ActorReference>,
+  reference: string
+): ActorReference | null => {
+  const actors = actorsList.filter(actor => {
+    const actorRef = actor.reference
+
+    return actorRef === reference
+  })
+
+  return actors.length ? actors[0] : null
 }
 
 export const getPosition = (

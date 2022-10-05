@@ -1,5 +1,5 @@
 import { get } from 'svelte/store'
-import { elements } from '../store'
+import { elements, actors } from '../store'
 import { getGlobalOptions } from '../internal/globalOptions'
 import type { ScrollToOptions } from '../types/options'
 import { sanitize, getElement, getPosition } from '../shared/utils'
@@ -48,6 +48,7 @@ const scrollTo = ( // eslint-disable-line @typescript-eslint/explicit-module-bou
   }
 
   let opts: ScrollToOptions = {
+    // onStateChange: () => {},
     ref: '',
     ...getGlobalOptions()
   }
@@ -72,6 +73,15 @@ const scrollTo = ( // eslint-disable-line @typescript-eslint/explicit-module-bou
 
   node.addEventListener('click', event => handle(event, opts))
   node.addEventListener('touchstart', event => handle(event, opts))
+
+  if (opts.onStateChange) {
+    const actorsList = get(actors)
+    actorsList.push({
+      node,
+      reference: opts.ref,
+      onStateChange: opts.onStateChange
+    })
+  }
 
   return {
     destroy () {
