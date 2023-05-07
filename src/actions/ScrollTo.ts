@@ -70,8 +70,8 @@ const scrollTo = ( // eslint-disable-line @typescript-eslint/explicit-module-bou
     node.style.cursor = 'pointer'
   }
 
-  node.addEventListener('click', event => handle(event, opts))
-  node.addEventListener('touchstart', event => handle(event, opts))
+  node.addEventListener('click', event => handle(event, opts), { passive: true })
+  node.addEventListener('touchstart', event => handle(event, opts), { passive: true })
 
   return {
     destroy () {
