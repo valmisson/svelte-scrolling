@@ -1,6 +1,5 @@
 import { writable } from 'svelte/store'
 import { cubicInOut } from 'svelte/easing'
-import { noop } from 'svelte/internal'
 import type { GlobalOptions } from '../types/options'
 import type { ElementReference } from '../types/reference'
 
@@ -9,6 +8,6 @@ export const globalOptions = writable<GlobalOptions>({
   offset: 0,
   duration: 500,
   easing: cubicInOut,
-  onStart: noop,
-  onDone: noop
+  onStart: () => { },
+  onDone: () => { }
 })

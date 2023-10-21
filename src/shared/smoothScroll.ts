@@ -1,4 +1,3 @@
-import { now } from 'svelte/internal'
 import type { SmoothOptions } from '../types/options'
 
 const currentPosition = (
@@ -19,10 +18,10 @@ const smoothScroll = async (
 ): Promise<void> => {
   return new Promise(resolve => {
     const { start, end, duration, easing } = options
-    const clock = now()
+    const clock = Date.now()
 
     const step = () => {
-      const elapsed = now() - clock
+      const elapsed = Date.now() - clock
       const position = currentPosition(
         start, end, elapsed, duration, easing
       )
