@@ -75,6 +75,7 @@ Scroll to a position on the page
 | `duration` | `500` | Duration (in milliseconds) of the animation. |
 | `offset` | `0` | Offset that should be applied when scrolling. |
 | `easing` | `cubicInOut` | Easing function to be used when animating. Use any easing from [`svelte/easing`][svelte-easing] or a custom easing function. |
+| `passive` | `true` | A boolean value that, if true, indicates that the function specified by listener will never call preventDefault(). |
 | `onStart` | `noop` | A callback function that should be called when scrolling has started. Receives the element, offset, duration and endPosition as a parameter. |
 | `onDone` | `noop` | A callback function that should be called when scrolling has started. Receives the element, offset, duration and endPosition as a parameter. |
 

@@ -8,6 +8,7 @@ export interface HooksOptions {
 export interface GlobalOptions {
   offset: number
   duration: number
+  passive?: boolean
   easing: (t: number) => number
   onStart?: (options: HooksOptions) => void
   onDone?: (options: HooksOptions) => void

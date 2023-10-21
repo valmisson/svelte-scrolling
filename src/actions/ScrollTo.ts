@@ -9,7 +9,7 @@ const elementsList = get(elements)
 
 // handle with scrolling
 const handle = async (event: Event, options: ScrollToOptions): Promise<void> => {
-  event.preventDefault()
+  if (!options.passive) event.preventDefault()
 
   const { ref, onDone, onStart } = options
 
@@ -70,10 +70,10 @@ const scrollTo = ( // eslint-disable-line @typescript-eslint/explicit-module-bou
     node.style.cursor = 'pointer'
   }
 
-  const _handler = (event) => handle(event, opts)
+  const _handler = (event: MouseEvent | TouchEvent) => handle(event, opts)
 
-  node.addEventListener('click', _handler)
-  node.addEventListener('touchstart', _handler)
+  node.addEventListener('click', _handler, { passive: opts.passive })
+  node.addEventListener('touchstart', _handler, { passive: opts.passive })
 
   return {
     destroy () {
