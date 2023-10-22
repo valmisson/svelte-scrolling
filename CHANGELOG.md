@@ -1,3 +1,18 @@
+# [1.3.0](https://github.com/valmisson/svelte-scrolling/compare/v1.2.2...v1.3.0) (2023-10-22)
+
+
+### Bug Fixes
+
+* removeEventListener ([#14](https://github.com/valmisson/svelte-scrolling/issues/14)) ([68484cf](https://github.com/valmisson/svelte-scrolling/commit/68484cf0c4a87a91c81c396b030fdd036ffaf7ae))
+* **warning:** remove creation of source maps ([#12](https://github.com/valmisson/svelte-scrolling/issues/12)) ([093f908](https://github.com/valmisson/svelte-scrolling/commit/093f90834a484055985f9fe7365d7ca292057b31))
+
+
+### Features
+
+* add flag passive as a global option ([#13](https://github.com/valmisson/svelte-scrolling/issues/13)) ([1f3032a](https://github.com/valmisson/svelte-scrolling/commit/1f3032a54785441bd74fced9af5a4abc62a19315))
+
+
+
 ## [1.2.2](https://github.com/valmisson/svelte-scrolling/compare/v1.2.1...v1.2.2) (2022-07-30)
 
 
