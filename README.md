@@ -94,7 +94,7 @@ Scroll to a position on the page
 ## License
 [MIT](LICENSE)
 
-Copyright (c) 2021 Valmisson Grizorte
+Copyright (c) 2021-present, Valmisson Grizorte
 
 
 [npm-shields]: https://img.shields.io/npm/v/svelte-scrolling.svg
