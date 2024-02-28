@@ -2,7 +2,7 @@ import { get } from 'svelte/store'
 import { elements } from '../store'
 import { getGlobalOptions } from '../internal/globalOptions'
 import { getElement, getPosition, sanitize } from '../shared/utils'
-import type { GlobalOptions } from '../types/options'
+import type { Coord, GlobalOptions } from '../types/options'
 import scrolling from '../shared/scrolling'
 
 const globalOptions = getGlobalOptions()
@@ -17,7 +17,7 @@ export const scrollTop = async (
   options?: Partial<GlobalOptions>
 ): Promise<void> => {
   const opts = Object.assign(globalOptions, options)
-  const endPosition = 0
+  const endPosition = { x: 0, y: 0 }
 
   const { duration, offset, onStart, onDone } = opts
 
@@ -44,13 +44,16 @@ export const scrollBottom = async (
   const body = document.body
   const html = document.documentElement
 
-  const endPosition = Math.max(
-    body.scrollHeight,
-    body.offsetHeight,
-    html.scrollHeight,
-    html.clientHeight,
-    html.offsetHeight
-  )
+  const endPosition = {
+    x: 0,
+    y: Math.max(
+      body.scrollHeight,
+      body.offsetHeight,
+      html.scrollHeight,
+      html.clientHeight,
+      html.offsetHeight
+    )
+  }
 
   onStart && onStart({ offset, duration, endPosition })
 
@@ -103,7 +106,7 @@ export const scrollElement = async (
  */
 
 export const scrollPosition = async (
-  position: number,
+  position: Coord,
   options?: Partial<GlobalOptions>
 ): Promise<void> => {
   if (!position || typeof position !== 'number') {

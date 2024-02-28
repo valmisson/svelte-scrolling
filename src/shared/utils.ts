@@ -1,3 +1,4 @@
+import type { Coord } from 'src/types/options'
 import type { ElementReference } from '../types/reference'
 
 export const sanitize = (hash: string): string => {
@@ -21,6 +22,6 @@ export const getElement = (
 
 export const getPosition = (
   element: HTMLElement
-): number => {
-  return element.offsetTop
+): Coord => {
+  return { y: element.offsetTop, x: element.offsetLeft }
 }

@@ -1,20 +1,33 @@
 import smoothScroll from './smoothScroll'
 import { getGlobalOptions } from '../internal/globalOptions'
-import type { GlobalOptions } from '../types/options'
+import type { Coord, GlobalOptions } from '../types/options'
 
 const globalOptions = getGlobalOptions()
 
 const scrolling = async (
-  endPosition: number,
+  coord: Coord,
   opts: GlobalOptions
 ): Promise<void> => {
   const { duration, easing, offset } = Object.assign(globalOptions, opts)
 
-  const start = window.pageYOffset
-  const end = endPosition + offset
+  const startY = window.pageYOffset
+  const startX = window.pageXOffset
+  const endX = coord.x + offset
+  const endY = coord.y
 
-  await smoothScroll({ start, end, duration, easing }, (position: number) => {
-    window.scroll(0, position)
+  await smoothScroll({
+    start: {
+      x: startX,
+      y: startY
+    },
+    end: {
+      x: endX,
+      y: endY
+    },
+    duration,
+    easing
+  }, (coord: Coord) => {
+    window.scroll(coord.x, coord.y)
   })
 }
 

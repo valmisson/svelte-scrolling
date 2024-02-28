@@ -8,7 +8,10 @@ import scrolling from '../shared/scrolling'
 const elementsList = get(elements)
 
 // handle with scrolling
-const handle = async (event: Event, options: ScrollToOptions): Promise<void> => {
+const handle = async (
+  event: Event,
+  options: ScrollToOptions
+): Promise<void> => {
   if (!options.passive) event.preventDefault()
 
   const { ref, onDone, onStart } = options
@@ -39,7 +42,8 @@ const handle = async (event: Event, options: ScrollToOptions): Promise<void> => 
  * @param options - The element reference or global options
  */
 
-const scrollTo = ( // eslint-disable-line @typescript-eslint/explicit-module-boundary-types
+const scrollTo = (
+  // eslint-disable-line @typescript-eslint/explicit-module-boundary-types
   node: HTMLElement,
   options: string | ScrollToOptions
 ) => {
@@ -53,8 +57,8 @@ const scrollTo = ( // eslint-disable-line @typescript-eslint/explicit-module-bou
   }
 
   typeof options === 'string'
-    ? opts.ref = options
-    : opts = Object.assign(opts, options)
+    ? (opts.ref = options)
+    : (opts = Object.assign(opts, options))
 
   opts.ref = sanitize(opts.ref)
 
