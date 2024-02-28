@@ -1,8 +1,14 @@
+
+export interface Coord {
+  x: number;
+  y: number
+}
+
 export interface HooksOptions {
   element?: HTMLElement,
   offset: number,
   duration: number,
-  endPosition: number
+  endPosition: Coord
 }
 
 export interface GlobalOptions {
@@ -15,8 +21,8 @@ export interface GlobalOptions {
 }
 
 export interface SmoothOptions {
-  start: number
-  end: number
+  start: Coord;
+  end: Coord;
   duration: number
   easing: (t: number) => number
 }

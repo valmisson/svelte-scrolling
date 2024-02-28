@@ -1,4 +1,4 @@
-import type { SmoothOptions } from '../types/options'
+import type { Coord, SmoothOptions } from '../types/options'
 
 const currentPosition = (
   start: number,
@@ -14,19 +14,17 @@ const currentPosition = (
 
 const smoothScroll = async (
   options: SmoothOptions,
-  callback: (positon: number) => void
+  callback: (coord: Coord) => void
 ): Promise<void> => {
-  return new Promise(resolve => {
+  return new Promise((resolve) => {
     const { start, end, duration, easing } = options
     const clock = Date.now()
 
     const step = () => {
       const elapsed = Date.now() - clock
-      const position = currentPosition(
-        start, end, elapsed, duration, easing
-      )
-
-      callback(position)
+      const positionX = currentPosition(start.x, end.x, elapsed, duration, easing)
+      const positionY = currentPosition(start.y, end.y, elapsed, duration, easing)
+      callback({ x: positionX, y: positionY })
 
       if (elapsed > duration) return resolve()
 
