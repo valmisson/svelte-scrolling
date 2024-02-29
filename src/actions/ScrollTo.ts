@@ -16,7 +16,6 @@ const handle = async (
 
   const { ref, onDone, onStart } = options
 
-  /* eslint-disable @typescript-eslint/no-non-null-assertion */
   const duration = options.duration!
   const offset = options.offset!
   const easing = options.easing!
@@ -43,7 +42,6 @@ const handle = async (
  */
 
 const scrollTo = (
-  // eslint-disable-line @typescript-eslint/explicit-module-boundary-types
   node: HTMLElement,
   options: string | ScrollToOptions
 ) => {

@@ -8,7 +8,7 @@ import { elements } from '../store'
  * @param reference - The reference element
  */
 
-const scrollRef = ( // eslint-disable-line @typescript-eslint/explicit-module-boundary-types
+const scrollRef = (
   node: HTMLElement,
   reference: string
 ) => {

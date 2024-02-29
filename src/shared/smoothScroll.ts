@@ -24,6 +24,7 @@ const smoothScroll = async (
       const elapsed = Date.now() - clock
       const positionX = currentPosition(start.x, end.x, elapsed, duration, easing)
       const positionY = currentPosition(start.y, end.y, elapsed, duration, easing)
+
       callback({ x: positionX, y: positionY })
 
       if (elapsed > duration) return resolve()
