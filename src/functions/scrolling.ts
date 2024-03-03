@@ -63,6 +63,61 @@ export const scrollBottom = async (
 }
 
 /**
+ * Scroll to the end of left the page
+ *
+ * @param options - An optional param with global options
+ */
+
+export const scrollLeft = async (
+  options?: Partial<GlobalOptions>
+): Promise<void> => {
+  const opts = Object.assign(globalOptions, options)
+  const endPosition = { x: 0, y: 0 }
+
+  const { duration, offset, onStart, onDone } = opts
+
+  onStart && onStart({ offset, duration, endPosition })
+
+  await scrolling(endPosition, opts)
+
+  onDone && onDone({ offset, duration, endPosition })
+}
+
+/**
+ * Scroll to the end of right the page
+ *
+ * @param options - An optional param with global options
+ */
+
+export const scrollRight = async (
+  options?: Partial<GlobalOptions>
+): Promise<void> => {
+  const opts = Object.assign(globalOptions, options)
+
+  const { duration, offset, onStart, onDone } = opts
+
+  const body = document.body
+  const html = document.documentElement
+
+  const endPosition = {
+    x: Math.max(
+      body.scrollWidth,
+      body.offsetWidth,
+      html.scrollWidth,
+      html.clientWidth,
+      html.offsetWidth
+    ),
+    y: 0
+  }
+
+  onStart && onStart({ offset, duration, endPosition })
+
+  await scrolling(endPosition, opts)
+
+  onDone && onDone({ offset, duration, endPosition })
+}
+
+/**
  * Scroll to element
  *
  * @param reference - The element reference
@@ -106,11 +161,15 @@ export const scrollElement = async (
  */
 
 export const scrollPosition = async (
-  position: Coord,
+  position: Coord | number,
   options?: Partial<GlobalOptions>
 ): Promise<void> => {
-  if (!position || typeof position !== 'number') {
+  if (!position) {
     throw new Error('scrollPosition require a position value valid')
+  }
+
+  if (typeof position === 'number') {
+    position = { x: 0, y: position }
   }
 
   const opts = Object.assign(globalOptions, options)

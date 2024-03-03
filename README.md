@@ -58,6 +58,14 @@ Scroll to the top of the page
 
 Scroll to the end of the page
 
+#### `scrollLeft(options?)`
+
+Scroll to the end of left the page
+
+#### `scrollRight(options?)`
+
+Scroll to the end of right the page
+
 #### `scrollElement(reference, options?)`
 
 Scroll to element with smooth animation.
