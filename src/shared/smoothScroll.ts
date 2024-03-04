@@ -20,7 +20,7 @@ const smoothScroll = async (
     const { start, end, duration, easing } = options
     const clock = Date.now()
 
-    const step = () => {
+    let step = () => {
       const elapsed = Date.now() - clock
       const positionX = currentPosition(start.x, end.x, elapsed, duration, easing)
       const positionY = currentPosition(start.y, end.y, elapsed, duration, easing)
@@ -31,6 +31,11 @@ const smoothScroll = async (
 
       window.requestAnimationFrame(step)
     }
+
+    window.addEventListener('wheel', function stopAnimation (): void {
+      step = () => {}
+      window.removeEventListener('wheel', stopAnimation)
+    })
 
     window.requestAnimationFrame(step)
   })
