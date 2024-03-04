@@ -26,7 +26,7 @@ export const scrollPosition = async (
     position = { x: 0, y: position }
   }
 
-  const opts = Object.assign(globalOptions, options)
+  const opts = Object.assign({}, globalOptions, options)
   const endPosition = position
   const { duration, offset, onStart, onDone } = opts
 
@@ -52,7 +52,7 @@ export const scrollElement = async (
     throw new Error('scrollElement require a reference valid')
   }
 
-  const opts = Object.assign(globalOptions, options)
+  const opts = Object.assign({}, globalOptions, options)
   const ref = sanitize(reference)
 
   const elementsList = get(elements)
@@ -76,7 +76,7 @@ export const scrollElement = async (
 export const scrollTop = async (
   options?: Partial<GlobalOptions>
 ): Promise<void> => {
-  const opts = Object.assign(globalOptions, options)
+  const opts = Object.assign({}, globalOptions, options)
   const endPosition = { x: 0, y: 0 }
 
   await scrollPosition(endPosition, opts)
@@ -91,7 +91,7 @@ export const scrollTop = async (
 export const scrollBottom = async (
   options?: Partial<GlobalOptions>
 ): Promise<void> => {
-  const opts = Object.assign(globalOptions, options)
+  const opts = Object.assign({}, globalOptions, options)
 
   const body = document.body
   const html = document.documentElement
@@ -119,7 +119,7 @@ export const scrollBottom = async (
 export const scrollLeft = async (
   options?: Partial<GlobalOptions>
 ): Promise<void> => {
-  const opts = Object.assign(globalOptions, options)
+  const opts = Object.assign({}, globalOptions, options)
   const endPosition = { x: 0, y: 0 }
 
   await scrollPosition(endPosition, opts)
@@ -134,7 +134,7 @@ export const scrollLeft = async (
 export const scrollRight = async (
   options?: Partial<GlobalOptions>
 ): Promise<void> => {
-  const opts = Object.assign(globalOptions, options)
+  const opts = Object.assign({}, globalOptions, options)
 
   const body = document.body
   const html = document.documentElement
