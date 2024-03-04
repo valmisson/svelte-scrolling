@@ -13,7 +13,7 @@ const scrolling = async (
   const startY = window.pageYOffset
   const startX = window.pageXOffset
   const endX = coord.x + offset
-  const endY = coord.y
+  const endY = coord.y + offset
 
   await smoothScroll({
     start: {
