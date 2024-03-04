@@ -1,3 +1,25 @@
+# [1.4.0](https://github.com/valmisson/svelte-scrolling/compare/v1.3.0...v1.4.0) (2024-03-04)
+
+
+### Bug Fixes
+
+* add offset option to y coordinate ([0766716](https://github.com/valmisson/svelte-scrolling/commit/0766716e911a07963a1bc6167c7aeb8993ec82a7))
+* animation doesn't stop when we scroll with the mouse wheel ([d196bcf](https://github.com/valmisson/svelte-scrolling/commit/d196bcf01030b02b2b8a3f635c145a0707253b69)), closes [#17](https://github.com/valmisson/svelte-scrolling/issues/17)
+* options passed in a function are overriding global options ([79f948e](https://github.com/valmisson/svelte-scrolling/commit/79f948e3a7b7ae42f276eb0f34b2fccdbeb7056e))
+
+
+### Features
+
+* add functions `scrollLeft` and `scrollRight` ([79451ab](https://github.com/valmisson/svelte-scrolling/commit/79451ab13cd27d771009303c5a459df5f04ca958))
+* horizontal scroll ([3bbff25](https://github.com/valmisson/svelte-scrolling/commit/3bbff251dae7f078e9a764265436fb6145c20e72))
+
+
+### Reverts
+
+* returns to the last release version ([4f0f9ea](https://github.com/valmisson/svelte-scrolling/commit/4f0f9ea43bdd28dfa67dfba8ec643d4435f5334b))
+
+
+
 # [1.3.0](https://github.com/valmisson/svelte-scrolling/compare/v1.2.2...v1.3.0) (2023-10-22)
 
 
