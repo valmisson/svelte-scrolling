@@ -1,11 +1,9 @@
 import { get } from 'svelte/store'
 import { elements } from '../store'
-import { getGlobalOptions } from '../internal/globalOptions'
+import { mergeGlobalOptions } from '../internal/globalOptions'
 import { getElement, getPosition, sanitize } from '../shared/utils'
-import type { Coord, GlobalOptions } from '../types/options'
 import scrolling from '../shared/scrolling'
-
-const globalOptions = getGlobalOptions()
+import type { Coord, GlobalOptions } from '../types/options'
 
 /**
  * Scroll to a position on the page
@@ -26,13 +24,13 @@ export const scrollPosition = async (
     position = { x: 0, y: position }
   }
 
-  const opts = Object.assign({}, globalOptions, options)
   const endPosition = position
-  const { duration, offset, onStart, onDone } = opts
+  const _options = mergeGlobalOptions(options)
+  const { duration, offset, onStart, onDone } = _options
 
   onStart?.({ offset, duration, endPosition })
 
-  await scrolling(endPosition, opts)
+  await scrolling(endPosition, _options)
 
   onDone?.({ offset, duration, endPosition })
 }
@@ -52,7 +50,6 @@ export const scrollElement = async (
     throw new Error('scrollElement require a reference valid')
   }
 
-  const opts = Object.assign({}, globalOptions, options)
   const ref = sanitize(reference)
 
   const elementsList = get(elements)
@@ -64,7 +61,7 @@ export const scrollElement = async (
 
   const endPosition = getPosition(element)
 
-  await scrollPosition(endPosition, opts)
+  await scrollPosition(endPosition, mergeGlobalOptions(options))
 }
 
 /**
@@ -76,10 +73,7 @@ export const scrollElement = async (
 export const scrollTop = async (
   options?: Partial<GlobalOptions>
 ): Promise<void> => {
-  const opts = Object.assign({}, globalOptions, options)
-  const endPosition = { x: 0, y: 0 }
-
-  await scrollPosition(endPosition, opts)
+  await scrollPosition({ x: 0, y: 0 }, mergeGlobalOptions(options))
 }
 
 /**
@@ -91,8 +85,6 @@ export const scrollTop = async (
 export const scrollBottom = async (
   options?: Partial<GlobalOptions>
 ): Promise<void> => {
-  const opts = Object.assign({}, globalOptions, options)
-
   const body = document.body
   const html = document.documentElement
 
@@ -107,7 +99,7 @@ export const scrollBottom = async (
     )
   }
 
-  await scrollPosition(endPosition, opts)
+  await scrollPosition(endPosition, mergeGlobalOptions(options))
 }
 
 /**
@@ -119,10 +111,7 @@ export const scrollBottom = async (
 export const scrollLeft = async (
   options?: Partial<GlobalOptions>
 ): Promise<void> => {
-  const opts = Object.assign({}, globalOptions, options)
-  const endPosition = { x: 0, y: 0 }
-
-  await scrollPosition(endPosition, opts)
+  await scrollPosition({ x: 0, y: 0 }, mergeGlobalOptions(options))
 }
 
 /**
@@ -134,8 +123,6 @@ export const scrollLeft = async (
 export const scrollRight = async (
   options?: Partial<GlobalOptions>
 ): Promise<void> => {
-  const opts = Object.assign({}, globalOptions, options)
-
   const body = document.body
   const html = document.documentElement
 
@@ -150,5 +137,5 @@ export const scrollRight = async (
     y: 0
   }
 
-  await scrollPosition(endPosition, opts)
+  await scrollPosition(endPosition, mergeGlobalOptions(options))
 }

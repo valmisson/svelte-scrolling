@@ -8,6 +8,10 @@ export const getGlobalOptions = (): GlobalOptions => {
   return globalOpts
 }
 
+export const mergeGlobalOptions = (options?: Partial<GlobalOptions>) => {
+  return Object.assign({}, globalOpts, options)
+}
+
 /**
  * Override global options
  *
