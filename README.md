@@ -24,7 +24,7 @@ yarn add svelte-scrolling
 </nav>
 
 <section use:scrollRef={'home'}></section>
-<section use:scrollRef={'about'}></section>
+<section id="about"></section>
 <section use:scrollRef={'blog'}></section>
 
 <button on:click={() => scrollTop()}>Go to top</button>
@@ -34,7 +34,7 @@ yarn add svelte-scrolling
 
 #### `scrollTo={reference | options}`
 
-This action listens for click (touchstart) events and scrolls to elements with smooth animation.
+This action listens for click (touchstart) events and scrolls to elements with smooth animation. The element to scroll to must be referenced using the `scrollRef` action or `id`.
 
 Accepts as parameter only the element reference or all global options:
 
@@ -44,7 +44,7 @@ Accepts as parameter only the element reference or all global options:
 
 #### `scrollRef={reference}`
 
-This action adds a reference to the elements that `scrollTo` should scroll
+This action adds a reference to the elements that `scrollTo` should scroll.
 
 Accepts as parameter a string with the name to reference the element
 

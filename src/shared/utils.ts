@@ -11,13 +11,15 @@ export const getElement = (
   elementsList: Array<ElementReference>,
   reference: string
 ): HTMLElement | null => {
-  const elements = elementsList.filter(element => {
-    const elementRef = element.reference
-
-    return elementRef === reference
+  const element = elementsList.find(el => {
+    return el.reference === reference
   })
 
-  return elements.length ? elements[0].node : null
+  if (!element) {
+    return document.getElementById(reference)
+  }
+
+  return element.node
 }
 
 export const getPosition = (
