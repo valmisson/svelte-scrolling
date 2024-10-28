@@ -1,3 +1,13 @@
+# [1.5.0](https://github.com/valmisson/svelte-scrolling/compare/v1.4.0...v1.5.0) (2024-10-28)
+
+
+### Features
+
+* add support for id attribute to reference elements ([9535ad8](https://github.com/valmisson/svelte-scrolling/commit/9535ad8ccf9cf8fbdaa89e64d6a8097aa455e4d0))
+* add support to svelte 5 ([169d26f](https://github.com/valmisson/svelte-scrolling/commit/169d26f5a11aa8af35f5c3c721278cf42d6e0ca9))
+
+
+
 # [1.4.0](https://github.com/valmisson/svelte-scrolling/compare/v1.3.0...v1.4.0) (2024-03-04)
 
 
