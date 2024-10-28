@@ -30,11 +30,11 @@ export const scrollPosition = async (
   const endPosition = position
   const { duration, offset, onStart, onDone } = opts
 
-  onStart && onStart({ offset, duration, endPosition })
+  onStart?.({ offset, duration, endPosition })
 
   await scrolling(endPosition, opts)
 
-  onDone && onDone({ offset, duration, endPosition })
+  onDone?.({ offset, duration, endPosition })
 }
 
 /**

@@ -28,11 +28,11 @@ const handle = async (
 
   const endPosition = getPosition(element)
 
-  onStart && onStart({ element, offset, duration, endPosition })
+  onStart?.({ element, offset, duration, endPosition })
 
   await scrolling(endPosition, { duration, offset, easing })
 
-  onDone && onDone({ element, offset, duration, endPosition })
+  onDone?.({ element, offset, duration, endPosition })
 }
 
 /**

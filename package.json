@@ -12,7 +12,7 @@
   ],
   "scripts": {
     "build": "tsc --build",
-    "lint": "eslint src/**/*.{js,ts,svelte}",
+    "lint": "eslint .",
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 1 && git add CHANGELOG.md",
     "prepublishOnly": "npm run build"
   },
@@ -20,19 +20,16 @@
     "svelte": "^3 || ^4"
   },
   "devDependencies": {
-    "@tsconfig/svelte": "^5.0.2",
-    "@typescript-eslint/eslint-plugin": "^7.1.0",
-    "@typescript-eslint/parser": "^7.1.0",
-    "conventional-changelog-cli": "^4.1.0",
-    "eslint": "^8.57.0",
-    "eslint-config-standard": "^17.1.0",
-    "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-n": "^16.6.2",
-    "eslint-plugin-promise": "^6.1.1",
-    "eslint-plugin-svelte3": "^4.0.0",
-    "lint-staged": "^15.2.2",
-    "svelte": "^4.2.12",
-    "typescript": "^5.3.3",
+    "@eslint/js": "^9.13.0",
+    "@tsconfig/svelte": "^5.0.4",
+    "conventional-changelog-cli": "^5.0.0",
+    "eslint": "^9.13.0",
+    "eslint-plugin-svelte": "^2.46.0",
+    "globals": "^15.11.0",
+    "lint-staged": "^15.2.10",
+    "svelte": "^4.2.19",
+    "typescript": "^5.6.3",
+    "typescript-eslint": "^8.11.0",
     "yorkie": "^2.0.0"
   },
   "gitHooks": {
@@ -40,7 +37,7 @@
   },
   "lint-staged": {
     "src/**/*.{js,ts,svelte}": [
-      "eslint --fix"
+      "eslint . --fix"
     ]
   },
   "repository": {
