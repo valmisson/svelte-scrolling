@@ -1,3 +1,12 @@
+## [1.5.1](https://github.com/valmisson/svelte-scrolling/compare/v1.5.0...v1.5.1) (2024-12-03)
+
+
+### Bug Fixes
+
+* global passive option by default should not be true ([8f56315](https://github.com/valmisson/svelte-scrolling/commit/8f563151e95268b017193b720c0b71c3eedb59bb))
+
+
+
 # [1.5.0](https://github.com/valmisson/svelte-scrolling/compare/v1.4.0...v1.5.0) (2024-10-28)
 
 
