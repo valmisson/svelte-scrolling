@@ -13,7 +13,7 @@
   "scripts": {
     "build": "tsc --build",
     "lint": "eslint .",
-    "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 1 && git add CHANGELOG.md",
+    "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 1 && npm i && git add .",
     "prepublishOnly": "npm run build"
   },
   "peerDependencies": {
