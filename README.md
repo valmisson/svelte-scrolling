@@ -27,7 +27,9 @@ yarn add svelte-scrolling
 <section id="about"></section>
 <section use:scrollRef={'blog'}></section>
 
-<button on:click={() => scrollTop()}>Go to top</button>
+<ScrollTop>
+  <button on:click={() => scrollTop()}>Go to top</button>
+</ScrollTop>
 ```
 
 ## Actions
@@ -107,4 +109,4 @@ Copyright (c) 2021-present, Valmisson Grizorte
 
 [npm-shields]: https://img.shields.io/npm/v/svelte-scrolling.svg
 [license-shields]: https://img.shields.io/badge/license-MIT-green
-[svelte-easing]: https://svelte.dev/docs#svelte_easing
+[svelte-easing]: https://svelte.dev/docs/svelte/svelte-easing
